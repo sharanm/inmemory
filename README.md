@@ -12,7 +12,11 @@ Assuming element is removed from queue iff is either processed or moved to DLQ. 
 What happens if the prereq consumer (i.e. A & B) do not have the filter expression which matches the expression of the dependent C.More precisely, the message is not processed by B due to filterining criteria. Assuming we still want to deliver as long as predecessor do not give errors.
 
 Few improvments todo due to lack of time:
+
 Retry mechanism is hardcoded to 3, can be improved and extracted as a user RetryPolicy 
+
 Separate threadpool for sending the message to a single consumers. Need to take care of dependency
+
 Optimizing/Generalizing the reaper logic
+
 Avoiding circular dependency as that can casue code to go in recursive loop
